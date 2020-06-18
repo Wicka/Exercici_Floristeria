@@ -6,7 +6,7 @@ public interface Menu {
 		System.out.println("1. New Article.");
 		System.out.println("2. View Stock.");
 		System.out.println("3. Delete Article.");
-		System.out.println("4. Return. \n");		
+		System.out.println("4. Exit. \n");		
 	}
 
 	public static void menuPrincipal() {
@@ -15,6 +15,12 @@ public interface Menu {
 		System.out.println("3. Start Flower Shop.");
 		System.out.println("4. Delete Flower Shop.");
 		System.out.println("0. Exit. \n");
+		
+	}
+	
+	public static void welcome() {
+		System.out.println("Welcome to the Flower Shop KEN");
+		System.out.println("What do you want to do? : ");
 		
 	}
 }

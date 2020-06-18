@@ -28,10 +28,10 @@ public class Main {
 	                    case 1:
 	                        System.out.println("New Flower Shop \n");
 	                        createShop();
-	                        System.out.println("New Flower Shop has been create");
+	                        System.out.println("New Flower Shop has been created");
 	                        break;
 	                    case 2:
-	                        System.out.println("View Flower Shops \n");
+	                        System.out.println("View Flower Shop \n");
 	                        viewShops();
 	                        break;
 	                    case 3:
@@ -43,7 +43,7 @@ public class Main {
 	                        deleteShop();
 	                        break;	              
 	                    case 0:
-	                    	System.out.println("Bye Bye");
+	                    	System.out.println("I want to Exit the program. Bye, bye");
 	                    	exit = true;
 	                        break;
 	                    default:
