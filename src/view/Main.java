@@ -115,7 +115,11 @@ public class Main {
 		System.out.println("Enter City. \n");
 		city=sc.next();
 		
-		controller.createFlowerShop (name, adress,phone,city);
+		try {
+			controller.createFlowerShop (name, adress,phone,city);
+		} catch (Exception e) {
+				e.printStackTrace();
+		}
         
 		
 	}

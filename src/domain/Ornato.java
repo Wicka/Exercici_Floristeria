@@ -2,16 +2,16 @@ package domain;
 
 public class Ornato extends AbsArticle{
 	
-	protected enum material {
+public static enum Material {
 		  Plastic,
 		  Wood
 		}
-	material mat;
+	Material mat;
 
 
-	public Ornato(int id, String name, String description, double pvp, String material, material mat) {
+	public Ornato(int id, String name, String description, double pvp,  Material mat) {
 		super(id, name, description, pvp);
-		this.mat=mat.Plastic;
+		this.mat=mat.Wood;
 		
 	}
 

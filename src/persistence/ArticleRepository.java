@@ -17,7 +17,7 @@ public class ArticleRepository {
 		return new ArrayList<>(articles);
 	}
 
-	public void addArticles(AbsArticle article) throws Exception{
+	public void addArticle(AbsArticle article) throws Exception{
 		if(article==null) throw new Exception();
 		articles.add(article);
 	}
