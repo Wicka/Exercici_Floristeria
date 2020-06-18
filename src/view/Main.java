@@ -17,7 +17,7 @@ public class Main {
 	        int opcion; 
 	     
 	        while (!exit) {
-	        	Menu.menuPrincipal();	 	   	
+	        	Menu.welcome();	 	   	
 	        
 	            try {
 	 
@@ -36,7 +36,7 @@ public class Main {
 	                        break;
 	                    case 3:
 	                        System.out.println("Start Flower Shop \n");
-	                        Menu.menuFloristeria();
+	                        Menu.menuPrincipalShop();
 	                        break;
 	                    case 4:
 	                        System.out.println("Delete Flower Shop \n");

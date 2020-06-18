@@ -1,6 +1,6 @@
 package view;
 
-public interface Menu {
+public class Menu {
 
 	public static void menuPrincipalArticle() {
 		System.out.println("Article Menu, tell us what do you want to do?");
@@ -11,7 +11,7 @@ public interface Menu {
 		System.out.println("5. Exit. \n");		
 	}
 
-	public static void menuPrincipalShop(int option, boolean exit ) {
+	public static void menuPrincipalShop() {
 		System.out.println("Shop Menu, tell us what do you want to do?");
 		System.out.println("1. New Flower Shop.");
 		System.out.println("2. View Flower Shop.");
@@ -20,7 +20,7 @@ public interface Menu {
 		System.out.println("4. Delete Flower Shop.");
 		System.out.println("0. Exit. \n");
 		doubleLine();
-		
+	/*	
 		switch(option) {
 	        case 1:
 	            System.out.println("New Flower Shop \n");
@@ -45,15 +45,17 @@ public interface Menu {
 	            break;
 	        default:
 	            System.out.println("You must enter a number between (0,1,2,3,4) \n");
-		}
-	}
+		}*/
+	}  
 	
 	public static void welcome() {
 		System.out.println("Welcome to the Flower Shop Aplication of KEN");
 		blankLine();
 		System.out.println("What do you want to do? : ");
-		System.out.println("1. Create, View, Update, Delete a Shop");
-		System.out.println("2. Create, View, Update, Delete an Article");
+		System.out.println("1. New Shop");
+		System.out.println("2. See Shop");
+		System.out.println("3. Delete Shop");
+		System.out.println("4. Exit");
 		blankLine();
 		line();
 	}
