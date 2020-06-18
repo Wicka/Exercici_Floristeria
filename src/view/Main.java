@@ -17,7 +17,8 @@ public class Main {
 	        int opcion; 
 	     
 	        while (!exit) {
-	        	Menu.menuPrincipal();	 	   	
+	        
+	        	Menu.menuPrincipalShop();	 	   	
 	        
 	            try {
 	 
@@ -36,7 +37,7 @@ public class Main {
 	                        break;
 	                    case 3:
 	                        System.out.println("Start Flower Shop \n");
-	                        Menu.menuFloristeria();
+	                        Menu.menuPrincipalArticle();
 	                        break;
 	                    case 4:
 	                        System.out.println("Delete Flower Shop \n");
@@ -91,6 +92,7 @@ public class Main {
 		
 		controller.getRepositoryShops().getAllShops().remove(iOption-1);;
 	}
+	
 
 	private static void viewShops() {
 		
