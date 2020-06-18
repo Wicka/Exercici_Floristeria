@@ -36,7 +36,7 @@ public class Main {
 	                        break;
 	                    case 3:
 	                        System.out.println("Start Flower Shop \n");
-	                        Menu.menuPrincipalShop();
+	                        Menu.oneShopMenu();
 	                        break;
 	                    case 4:
 	                        System.out.println("Delete Flower Shop \n");
