@@ -18,8 +18,8 @@ public class ShopRepository {
 		return new ArrayList<>(shops);
 	}
 
-	public void addShops(Flower_Shop shop) {
-//		if(shop==null) throw new Exception();
+	public void addShop(Flower_Shop shop) throws Exception {
+		if(shop==null) throw new Exception();
 		shops.add(shop);
 	}
 

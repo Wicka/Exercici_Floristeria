@@ -9,5 +9,11 @@ public class Tree extends AbsArticle{
 		this.height=height;
 	}
 
+	@Override
+	public String toString() {
+		return "Tree [height=" + height + ", id=" + id + ", name=" + name + ", description=" + description + ", pvp="
+				+ pvp + "]";
+	}
+
 	
 }

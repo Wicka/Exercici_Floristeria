@@ -12,6 +12,7 @@ public class Flower_Shop {
 
 	
 	public Flower_Shop(String name, String adress, String phone, String city) {
+		
 		this.name = name;
 		this.adress = adress;
 		this.phone = phone;
