@@ -8,7 +8,7 @@ import domain.Flower_Shop;
 
 public class Main {
 	
-	private static FlowerShopController controller = new FlowerShopController();
+	private static FlowerShopController controllerShop = new FlowerShopController();
 
 	public static void main(String[] args) {
 		
@@ -29,17 +29,17 @@ public class Main {
 	                
 	                    case 1:
 	                    	//CREATE NEW SHOP
-	                    	controller.menuCreateFlowerShop();	                    	
+	                    	controllerShop.menuCreateFlowerShop();	   
 	                    break;
 	                    
 	                    case 2:
 	                    	//MOSTRAR TIENDAS
-	                        controller.menuViewShops();
+	                    	controllerShop.menuViewShops();
 	                    break;
 	                    
 	                    case 3:
 	                    	//DELETE SHOP
-	                    	controller.menuDeleteShop();	                    	
+	                    	controllerShop.menuDeleteShop();	                    	
 	                    break;	                    
 	                    
 	                    case 4:

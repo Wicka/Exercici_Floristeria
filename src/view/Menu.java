@@ -5,8 +5,8 @@ public class Menu {
 	public static void categorysForArticles() {
 		
 		blankLine();
-		System.out.println("1. Tree");
-		System.out.println("2. Flower");
+		System.out.println("1. Flower");
+		System.out.println("2. Tree");
 		System.out.println("3. Decoration");
 		System.out.println("4. Delete Article.");
 		blankLine();
