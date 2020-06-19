@@ -27,7 +27,7 @@ public class Main {
 	                switch (opcion) {
 	                    case 1:
 	                        System.out.println("New Flower Shop \n");
-	                        createShop();
+	                        createShop(); //TODO: Fix error when you write a full adress
 	                        System.out.println("Your New Flower Shop has been created");
 	                        break;
 	                    case 2:
@@ -102,12 +102,13 @@ public class Main {
 	private static void createShop() {
 		
 		Scanner sc = new Scanner (System.in);
+		Scanner adr = new Scanner(System.in);
 		
         String name,adress,phone,city;
 		System.out.println("Enter  the name of the new Flower Shop. \n");
 		name=sc.next();
 		System.out.println("Enter the Adress. \n");
-		adress=sc.next();
+		adress=adr.next();
 		System.out.println("Enter the Phone. \n");
 		phone=sc.next();
 		System.out.println("Enter the City. \n");
