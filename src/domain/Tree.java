@@ -4,14 +4,14 @@ public class Tree extends AbsArticle{
 	
 	protected int height;
 
-	public Tree(int id, String name, String description, double pvp, int height) {
-		super(id, name, description, pvp);
+	public Tree( String name, String description, double pvp, int height) {
+		super( name, description, pvp);
 		this.height=height;
 	}
 
 	@Override
 	public String toString() {
-		return "Tree [height=" + height + ", id=" + id + ", name=" + name + ", description=" + description + ", pvp="
+		return "Tree [height=" + height + ", name=" + name + ", description=" + description + ", pvp="
 				+ pvp + "]";
 	}
 

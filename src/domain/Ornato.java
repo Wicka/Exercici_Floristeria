@@ -11,14 +11,14 @@ public static enum Material {
 	Material mat;
 
 
-	public Ornato(int id, String name, String description, double pvp,  Material mat) {
-		super(id, name, description, pvp);
+	public Ornato( String name, String description, double pvp,  Material mat) {
+		super(name, description, pvp);
 		this.mat=mat.Wood;
 		
 	}
 	@Override
 	public String toString() {
-		return "Ornato [mat=" + mat + ", id=" + id + ", name=" + name + ", description=" + description + ", pvp=" + pvp
+		return "Ornato [mat=" + mat +  ", name=" + name + ", description=" + description + ", pvp=" + pvp
 				+ "]";
 	}
 

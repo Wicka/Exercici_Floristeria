@@ -35,6 +35,11 @@ public class Menu {
 		blankLine();
 		line();
 	}
+	
+	public static void selectShop() {
+	
+	}
+		
 
 	public static void blankLine() {
 		System.out.println("                                                                                                                         ");
