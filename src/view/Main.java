@@ -26,20 +26,20 @@ public class Main {
 	 
 	                switch (opcion) {
 	                    case 1:
-	                        System.out.println("New Flower Shop \n");
+	                        System.out.println("New Flower Shop");
 	                        createShop(); //TODO: Fix error when you write a full adress
 	                        System.out.println("Your New Flower Shop has been created");
 	                        break;
 	                    case 2:
-	                        System.out.println("View Flower Shop \n");
+	                        System.out.println("View Flower Shop");
 	                        viewShops();
 	                        break;
 	                    case 3:
-	                        System.out.println("Start Flower Shop \n");
+	                        System.out.println("Start Flower Shop");
 	                        Menu.oneShopMenu();
 	                        break;
 	                    case 4:
-	                        System.out.println("Delete Flower Shop \n");
+	                        System.out.println("Delete Flower Shop");
 	                        deleteShop();
 	                        break;	              
 	                    case 0:
@@ -47,7 +47,7 @@ public class Main {
 	                    	exit = true;
 	                        break;
 	                    default:
-	                        System.out.println("You must enter a number between (0,1,2,3,4) \n");
+	                        System.out.println("You must enter a number between (0,1,2,3,4)");
 	                }
 	                
 	            } catch (InputMismatchException e) {
@@ -58,7 +58,7 @@ public class Main {
 	            }finally{
 					//System.out.println("Continue");						
 				}
-					
+	      
 	        }
 }
 
@@ -89,7 +89,8 @@ public class Main {
 		}
 		}while(iOption <1 || iOption >iCont);
 		
-		controller.getRepositoryShops().getAllShops().remove(iOption-1);;
+		controller.getRepositoryShops().getAllShops().remove(iOption-1);
+
 	}
 
 	private static void viewShops() {
@@ -102,21 +103,23 @@ public class Main {
 	private static void createShop() {
 		
 		Scanner sc = new Scanner (System.in);
-		Scanner adr = new Scanner(System.in);
-		
+
+				
         String name,adress,phone,city;
-		System.out.println("Enter  the name of the new Flower Shop. \n");
-		name=sc.next();
-		System.out.println("Enter the Adress. \n");
-		adress=adr.next();
-		System.out.println("Enter the Phone. \n");
-		phone=sc.next();
-		System.out.println("Enter the City. \n");
-		city=sc.next();
+		System.out.println("Enter  the name of the new Flower Shop.");
+		name=sc.nextLine();
+		System.out.println("Enter the Adress.");
+		adress=sc.nextLine();
+		System.out.println("Enter the Phone.");
+		phone=sc.nextLine();
+		System.out.println("Enter the City.");
+		city=sc.nextLine();
+
+		
 		
 		controller.createFlowerShop (name,adress,phone,city);
         
-		
+
 	}
 
 }
