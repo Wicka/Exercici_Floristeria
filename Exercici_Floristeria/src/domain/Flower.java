@@ -18,4 +18,11 @@ public class Flower extends AbsArticle{
 		this.colour=white;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Flower [colour=" + colour + ", id=" + id + ", name=" + name + ", description=" + description + ", pvp="
+				+ pvp + "]";
+	}
+
 }

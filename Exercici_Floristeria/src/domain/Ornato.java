@@ -2,6 +2,8 @@ package domain;
 
 public class Ornato extends AbsArticle{
 	
+
+
 public static enum Material {
 		  Plastic,
 		  Wood
@@ -13,6 +15,11 @@ public static enum Material {
 		super(id, name, description, pvp);
 		this.mat=mat.Wood;
 		
+	}
+	@Override
+	public String toString() {
+		return "Ornato [mat=" + mat + ", id=" + id + ", name=" + name + ", description=" + description + ", pvp=" + pvp
+				+ "]";
 	}
 
 }
