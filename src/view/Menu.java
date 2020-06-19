@@ -31,7 +31,7 @@ public class Menu {
 		System.out.println("What do you want to do? : ");
 		System.out.println("1. New Shop");
 		System.out.println("2. See Shop");
-		System.out.println("3. Start a Shop");
+		System.out.println("3. Start products for the Shop");
 		System.out.println("4. Delete Shop");
 		System.out.println("5. Exit");
 		blankLine();

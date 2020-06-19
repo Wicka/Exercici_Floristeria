@@ -40,14 +40,17 @@ public class Main {
 	                        break;
 	                    case 4:
 	                        System.out.println("Delete Flower Shop");
+	                        Menu.line();
+	                        System.out.println("If you do not see a numbered list is that you still have to create the first shop");
+	                        Menu.line();
 	                        deleteShop();
 	                        break;	              
-	                    case 0:
+	                    case 5:
 	                    	System.out.println("I want to Exit the program. Bye, bye");
 	                    	exit = true;
 	                        break;
 	                    default:
-	                        System.out.println("You must enter a number between (0,1,2,3,4)");
+	                        System.out.println("You must enter a number between (1,2,3,4)");
 	                }
 	                
 	            } catch (InputMismatchException e) {
@@ -79,7 +82,7 @@ public class Main {
 			
 			
 			if (iOption <1 || iOption >iCont) {
-				System.out.println("You must choice one Shop to delete it");				
+				System.out.println("You must choose one Shop to delete it");				
 			}
 			
 		} catch (InputMismatchException e) {              
