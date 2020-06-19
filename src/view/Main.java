@@ -12,7 +12,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		
-		  Scanner sc = new Scanner(System.in);
+		  	Scanner sc = new Scanner(System.in);
 	        boolean exit = false;
 	        int opcion; 
 	     
@@ -28,7 +28,7 @@ public class Main {
 	                    case 1:
 	                        System.out.println("New Flower Shop \n");
 	                        createShop();
-	                        System.out.println("New Flower Shop has been created");
+	                        System.out.println("Your New Flower Shop has been created");
 	                        break;
 	                    case 2:
 	                        System.out.println("View Flower Shop \n");
@@ -103,17 +103,17 @@ public class Main {
 		
 		Scanner sc = new Scanner (System.in);
 		
-        String name, adress,phone,city;
-		System.out.println("Enter Name new Flower Shop. \n");
+        String name,adress,phone,city;
+		System.out.println("Enter  the name of the new Flower Shop. \n");
 		name=sc.next();
-		System.out.println("Enter Adress. \n");
+		System.out.println("Enter the Adress. \n");
 		adress=sc.next();
-		System.out.println("Enter Phone. \n");
+		System.out.println("Enter the Phone. \n");
 		phone=sc.next();
-		System.out.println("Enter City. \n");
+		System.out.println("Enter the City. \n");
 		city=sc.next();
 		
-		controller.createFlowerShop (name, adress,phone,city);
+		controller.createFlowerShop (name,adress,phone,city);
         
 		
 	}

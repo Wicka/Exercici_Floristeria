@@ -25,13 +25,15 @@ public class Menu {
 	}
 	
 	public static void welcome() {
+		blankLine();
 		System.out.println("Welcome to the Flower Shop Aplication of KEN");
 		blankLine();
 		System.out.println("What do you want to do? : ");
 		System.out.println("1. New Shop");
 		System.out.println("2. See Shop");
-		System.out.println("3. Delete Shop");
-		System.out.println("4. Exit");
+		System.out.println("3. Start a Shop");
+		System.out.println("4. Delete Shop");
+		System.out.println("5. Exit");
 		blankLine();
 		line();
 	}
