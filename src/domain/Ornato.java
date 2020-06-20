@@ -6,7 +6,8 @@ public class Ornato extends AbsArticle{
 
 public static enum Material {
 		  Plastic,
-		  Wood
+		  Wood,
+		  Undefined
 		}
 	Material mat;
 

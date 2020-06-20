@@ -9,13 +9,14 @@ public class Flower extends AbsArticle{
 		  Green,
 		  Yellow,
 		  Pink,
-		  white
+		  White,
+		  Undefined
 		}
 	Colour colour;
 
 	public Flower( String name, String description, double pvp, Colour colour) {
 		super(name, description, pvp);
-		this.colour=colour.white;
+		this.colour=colour;
 	}
 
 

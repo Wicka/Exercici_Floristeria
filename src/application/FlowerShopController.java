@@ -34,7 +34,7 @@ public class FlowerShopController {
 	//-------------------------------------CREACION TIENDA ---------------------------------------------------------------------
 	//-------------------------------------------------------------------------------------------------------------------------
 	
-	public void menuCreateFlowerShop() throws Exception  {
+	public void menuCreateFlowerShop()   {
 	
 		Scanner sc = new Scanner (System.in);
 		
@@ -72,7 +72,7 @@ public class FlowerShopController {
 	
 	public  void menuViewShops() {
 		Scanner sc =new Scanner (System.in);
-		
+		boolean exit=false;
 		int iOption=-1;
 		
 		int iCont=repositoryShops.getAllShops().size();
@@ -80,10 +80,8 @@ public class FlowerShopController {
   		//MUESTRO TIENDAS
 		Menu.showsShop(repositoryShops);			
 		// FIN MOSTRAR TIENDAS 
-		
 		//ELIJA TIENDA
 		
- 
         do {
         	
         	try {
@@ -100,29 +98,63 @@ public class FlowerShopController {
         	
         }while (iOption <1 || iOption >iCont);
 		
-		
 		//FIN ELIJO TIENDA
 	
-        System.out.println("SELECCIONO LA TIENDA " + repositoryShops.getAllShops().get(iOption-1).getName());
+        System.out.println("SE HA SELECCIONADO LA TIENDA " + repositoryShops.getAllShops().get(iOption-1).getName());
+      
+        iOption=-1;
 		
-		Menu.oneShopMenu();
-		
-		//DEPENDIENDO QUE ELIJA SE ENVIA MENU
-		//NUEVO ARTICULO
-		//VER ARTICULO
-		//BORRAR ARTICUL
-		//VOLVER MENU ANTERIOR
-		
-		//DESDE AQUI LLAMAR AL CONTROLLER ARTICULO
-    	
-      	controllerArticle.menuCreateArticle();
-      	controllerArticle.menuSeeArticle();
-      	controllerArticle.menuDeleteArticle();
-		
-     	
-		
-	
-	      		
+        
+        //ENTRO EN MENU ARTICULOS
+        
+       //DEPENDIENDO QUE ELIJA SE ENVIA MENU
+      		//NUEVO ARTICULO
+      		//VER ARTICULO
+      		//BORRAR ARTICUL
+      		//VOLVER MENU ANTERIOR
+        
+        
+		while(!exit) {
+			
+			Menu.oneShopMenu();
+
+            System.out.println("Select one Option");
+            iOption = sc.nextInt();
+
+			try {
+				   switch (iOption) {
+	                
+                   case 1:
+                   	//CREATE NEW ARTICLE
+                	   controllerArticle.menuCreateArticle();
+                   break;
+                   
+                   case 2:
+                   	//MOSTRAR ARTICULOS
+                	   controllerArticle.menuSeeArticle();
+                   break;
+                   
+                   case 3:
+                   	//DELETE ARTICULOS
+                	   controllerArticle.menuDeleteArticle();
+                   break;	                    
+                   
+                   case 4:
+                   	System.out.println("I want to Come Back Previous Menu");	            	        
+                   	exit = true;
+                   break;
+                  
+                   default:
+                       System.out.println("You must enter a number between (1,2,3,4) \n");
+               }
+			     
+	 			} catch (Exception e) {
+	 			     System.out.println("Select one Option");
+				     iOption = sc.nextInt();				
+			}
+			
+		}
+			      		
 	}
 	
 			

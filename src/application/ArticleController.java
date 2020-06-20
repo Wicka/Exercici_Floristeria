@@ -77,7 +77,7 @@ public class ArticleController {
 						System.out.println("2. " + Colour.Green);
 						System.out.println("3. " + Colour.Pink);
 						System.out.println("4. " + Colour.Red);
-						System.out.println("5. " + Colour.white);
+						System.out.println("5. " + Colour.White);
 						System.out.println("6. " + Colour.Yellow);
 						
 						iColour=sc.nextInt();
@@ -96,14 +96,14 @@ public class ArticleController {
 								colour=Colour.Red;					
 							break;
 							case 5:					
-								colour=Colour.white;					
+								colour=Colour.White;					
 							break;
 							case 6:					
 								colour=Colour.Yellow;					
 							break;
 	
 							default:
-								colour=Colour.white;					
+								colour=Colour.Undefined;					
 							break;
 						}
 						
@@ -137,7 +137,7 @@ public class ArticleController {
 								material=Material.Plastic;
 							break;
 							default:
-								material=Material.Plastic;								
+								material=Material.Undefined;								
 							break;
 						}
 						
@@ -181,6 +181,10 @@ public class ArticleController {
 
 	public void menuSeeArticle() {
 		Menu.showArticles();
+		
+		for (AbsArticle article : repositoryArticles.getArticles()) {
+			System.out.println(article);
+		}
 			
 	}
 
