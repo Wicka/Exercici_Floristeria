@@ -34,7 +34,7 @@ public class ArticleController {
 		
 		
 	
-		public void menuCreateArticle() throws Exception  {
+		public void menuCreateArticle()  {
 			
 			Scanner sc = new Scanner (System.in);
 			
@@ -170,6 +170,22 @@ public class ArticleController {
 	public void createOrnato ( String name, String description, double pvp, Material material) throws Exception {
 		AbsArticle ornato = new Ornato (name, description, pvp, material);
 		repositoryArticles.addArticle(ornato);
+	}
+
+
+
+
+	public void menuSeeArticle() {
+		Menu.showArticles();
+			
+	}
+
+
+
+
+	public void menuDeleteArticle() {
+		Menu.deleteArticle();
+		
 	}
 
 	

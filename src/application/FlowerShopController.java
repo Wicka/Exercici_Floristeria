@@ -71,25 +71,57 @@ public class FlowerShopController {
 
 	
 	public  void menuViewShops() {
+		Scanner sc =new Scanner (System.in);
 		
-    	String allShops=getAllShops();		
-		System.out.println("Flowers Shops : " + allShops + " \n");
+		int iOption=-1;
 		
-		//SELECCIONAR TIENDA
+		int iCont=repositoryShops.getAllShops().size();
 		
-		Menu.selectShop();
+  		//MUESTRO TIENDAS
+		Menu.showsShop(repositoryShops);			
+		// FIN MOSTRAR TIENDAS 
+		
+		//ELIJA TIENDA
+		
+ 
+        do {
+        	
+        	try {
+
+    			iOption=sc.nextInt();
+    			
+    			//FALTA TRATAR QUE SE ENTRE CORRECTAMENTE
+    			//PUES CON ESTE SI ENTRA LETRA SE VA AL TRY CATH INICIAL
+    				
+    		} catch (Exception e) {
+
+    			iOption=sc.nextInt();
+    		}
+        	
+        }while (iOption <1 || iOption >iCont);
+		
+		
+		//FIN ELIJO TIENDA
+	
+        System.out.println("SELECCIONO LA TIENDA " + repositoryShops.getAllShops().get(iOption-1).getName());
 		
 		Menu.oneShopMenu();
 		
+		//DEPENDIENDO QUE ELIJA SE ENVIA MENU
+		//NUEVO ARTICULO
+		//VER ARTICULO
+		//BORRAR ARTICUL
+		//VOLVER MENU ANTERIOR
+		
 		//DESDE AQUI LLAMAR AL CONTROLLER ARTICULO
-      	try {
+    	
+      	controllerArticle.menuCreateArticle();
+      	controllerArticle.menuSeeArticle();
+      	controllerArticle.menuDeleteArticle();
 		
-      		controllerArticle.menuCreateArticle();
+     	
 		
-      	} catch (Exception e) {
-		
-			e.printStackTrace();
-		}
+	
 	      		
 	}
 	

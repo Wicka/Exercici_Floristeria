@@ -1,5 +1,8 @@
 package view;
 
+import domain.Flower_Shop;
+import persistence.ShopRepository;
+
 public class Menu {
 
 	public static void categorysForArticles() {
@@ -17,7 +20,7 @@ public class Menu {
 		blankLine();
 		System.out.println("What do you want to do? : ");
 		System.out.println("1. New Article");
-		System.out.println("2. Article Edit");
+		System.out.println("2. See Articles");
 		System.out.println("3. Delete Article");
 		System.out.println("4. Exit");
 		blankLine();
@@ -36,9 +39,7 @@ public class Menu {
 		line();
 	}
 	
-	public static void selectShop() {
 	
-	}
 		
 
 	public static void blankLine() {
@@ -52,5 +53,29 @@ public class Menu {
 	public static void doubleLine() {
 		System.out.println("_________________________________________________________________________________________________________________________");
 		System.out.println("_________________________________________________________________________________________________________________________");
+	}
+
+	
+	
+	
+	public static void showsShop(ShopRepository repositoryShops) {
+		int iCont=0;
+		System.out.println("SELECCIONA TIENDA");
+		
+		for (Flower_Shop shop : repositoryShops.getAllShops()) {
+			iCont=iCont+1;
+			System.out.println(iCont+ ". " + shop.getName());
+		}
+		
+	}
+
+	public static void showArticles() {
+	
+		
+	}
+
+	public static void deleteArticle() {
+	
+		
 	}
 }
