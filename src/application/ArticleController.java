@@ -125,7 +125,7 @@ public class ArticleController {
 						//QUEREMOS DECORACION
 						System.out.println("Enter Material");
 						System.out.println("1. " + Material.Wood);
-						System.out.println("2. " + Material.Wood);
+						System.out.println("2. " + Material.Plastic);
 						iMaterial=sc.nextInt();
 						
 						switch (iMaterial) {
