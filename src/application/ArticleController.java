@@ -29,7 +29,7 @@ public class ArticleController {
 
 		Scanner sc = new Scanner(System.in);
 
-		String name, description;
+		String name=null, description=null;
 		double pvp;
 		int iColour = -1, iType = -1, iMaterial;
 		Colour colour;
@@ -43,13 +43,14 @@ public class ArticleController {
 			Menu.categorysForArticles();
 
 			iType = sc.nextInt();
+			sc.nextLine();
 
 			// PARAMETROS COMUNES A TODOS LOS ARTICULOS
 
-			System.out.println("Enter name.");
+			System.out.println("Enter name. \n");
 			name = sc.nextLine();
-//TODO:jumps straight to description
-			System.out.println("Enter description.");
+	
+			System.out.println("Enter description.\n");
 			description = sc.nextLine();
 
 			System.out.println("Enter PVP.");
@@ -170,11 +171,16 @@ public class ArticleController {
 
 	public void menuSeeArticle() {
 		// Menu.showArticles();
-		System.out.println("these are the articles in this store:\n");
-		for (AbsArticle article : repositoryArticles.getArticles()) {
-			System.out.println(article);
+		
+		if (repositoryArticles.getArticles().size()==0) {
+			System.out.println("There isn't any article in this store. \n");
+		}else {
+			
+			System.out.println("these are the articles in this store:\n");
+			for (AbsArticle article : repositoryArticles.getArticles()) {
+				System.out.println(article);
+			}
 		}
-
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------------
@@ -186,13 +192,18 @@ public class ArticleController {
 		int iCont = 1;
 		Scanner sc = new Scanner(System.in);
 
-		for (AbsArticle article : repositoryArticles.getArticles()) {
-			System.out.println(iCont + ". " + article + "\n");
-			iCont++;
+		if (repositoryArticles.getArticles().size()==0) {
+			System.out.println("There isn't any article to delete in this store. \n");
+		}else {	
+			
+			for (AbsArticle article : repositoryArticles.getArticles()) {
+				System.out.println(iCont + ". " + article + "\n");
+				iCont++;
+			}
+			System.out.println("Select one article to delete");
+			int iOption = sc.nextInt();
+			deleteArticle(iOption - 1);
 		}
-		System.out.println("Select one article to delete");
-		int iOption = sc.nextInt();
-		deleteArticle(iOption - 1);
 	}
 
 	public void deleteArticle(int position) {

@@ -15,6 +15,15 @@ public class Main {
 		  Scanner sc = new Scanner(System.in);
 	        boolean exit = false;
 	        int opcion; 
+	        
+         	try {
+				controllerShop.createFlowerShop("La FLoristeria 01", "Calle Flor 1", "123456787", "Barcelona");
+				controllerShop.createFlowerShop("La FLoristeria 02", "Calle Flor 2", "123456788", "Madrid");
+				controllerShop.createFlowerShop("La FLoristeria 03", "Calle Flor 3", "123456789", "Valencia");
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		
 	     
 	        while (!exit) {
 	        
@@ -29,8 +38,9 @@ public class Main {
 	                
 	                    case 1:
 	                    	//CREATE NEW SHOP
-	                    	controllerShop.menuCreateFlowerShop();	   
-	                    break;
+	                    	
+	                    	controllerShop.menuCreateFlowerShop();	                    
+	                        break;
 	                    
 	                    case 2:
 	                    	//MOSTRAR TIENDAS
