@@ -169,8 +169,8 @@ public class ArticleController {
 	// -------------------------------------------------------------------------------------------------------------------------
 
 	public void menuSeeArticle() {
-		Menu.showArticles();
-
+		// Menu.showArticles();
+		System.out.println("these are the articles in this store:\n");
 		for (AbsArticle article : repositoryArticles.getArticles()) {
 			System.out.println(article);
 		}
