@@ -66,79 +66,80 @@ public class FlowerShopController {
 		int iCont = repositoryShops.getAllShops().size();
 
 		// MUESTRO TIENDAS
-		Menu.showsShop(repositoryShops);
 		// FIN MOSTRAR TIENDAS
 		// ELIJA TIENDA
+		if (iCont == 0) {
+			System.out.println("There are no shops yet in the shops network\nSelect 1. to create a shop");
+		} else {
+			do {
+				Menu.showsShop(repositoryShops);
+				try {
 
-		do {
+					iOption = sc.nextInt();
+					// FALTA TRATAR QUE SE ENTRE CORRECTAMENTE
+					// PUES CON ESTE SI ENTRA LETRA SE VA AL TRY CATH INICIAL
 
-			try {
+				} catch (Exception e) {
 
-				iOption = sc.nextInt();
-
-				// FALTA TRATAR QUE SE ENTRE CORRECTAMENTE
-				// PUES CON ESTE SI ENTRA LETRA SE VA AL TRY CATH INICIAL
-
-			} catch (Exception e) {
-
-				iOption = sc.nextInt();
-			}
-
-		} while (iOption < 1 || iOption > iCont);
-
-		// FIN ELIJO TIENDA
-
-		System.out.println("SE HA SELECCIONADO LA TIENDA " + repositoryShops.getAllShops().get(iOption - 1).getName());
-
-		iOption = -1;
-
-		// ENTRO EN MENU ARTICULOS
-
-		// DEPENDIENDO QUE ELIJA SE ENVIA MENU
-		// NUEVO ARTICULO
-		// VER ARTICULO
-		// BORRAR ARTICUL
-		// VOLVER MENU ANTERIOR
-
-		while (!exit) {
-
-			Menu.oneShopMenu();
-
-			System.out.println("Select one Option");
-			iOption = sc.nextInt();
-
-			try {
-				switch (iOption) {
-
-				case 1:
-					// CREATE NEW ARTICLE
-					controllerArticle.menuCreateArticle();
-					break;
-
-				case 2:
-					// MOSTRAR ARTICULOS
-					controllerArticle.menuSeeArticle();
-					break;
-
-				case 3:
-					// DELETE ARTICULOS
-					controllerArticle.menuDeleteArticle();
-					break;
-
-				case 4:
-					System.out.println("I want to Come Back Previous Menu");
-					exit = true;
-					break;
-
-				default:
-					System.out.println("You must enter a number between (1,2,3,4) \n");
+					iOption = sc.nextInt();
 				}
 
-			} catch (Exception e) {
+				System.out.println(
+						"SE HA SELECCIONADO LA TIENDA " + repositoryShops.getAllShops().get(iOption - 1).getName());
+			} while (iOption < 1 || iOption > iCont);
+
+			// FIN ELIJO TIENDA
+
+			iOption = -1;
+
+			// ENTRO EN MENU ARTICULOS
+
+			// DEPENDIENDO QUE ELIJA SE ENVIA MENU
+			// NUEVO ARTICULO
+			// VER ARTICULO
+			// BORRAR ARTICUL
+			// VOLVER MENU ANTERIOR
+
+			while (!exit) {
+
+				Menu.oneShopMenu();
+
 				System.out.println("Select one Option");
 				iOption = sc.nextInt();
-			}
 
+				try {
+					switch (iOption) {
+
+					case 1:
+						// CREATE NEW ARTICLE
+						controllerArticle.menuCreateArticle();
+						break;
+
+					case 2:
+						// MOSTRAR ARTICULOS
+						controllerArticle.menuSeeArticle();
+						break;
+
+					case 3:
+						// DELETE ARTICULOS
+						controllerArticle.menuDeleteArticle();
+						break;
+
+					case 4:
+						System.out.println("I want to Come Back Previous Menu");
+						exit = true;
+						break;
+
+					default:
+						System.out.println("You must enter a number between (1,2,3,4) \n");
+					}
+
+				} catch (Exception e) {
+					System.out.println("Select one Option");
+					iOption = sc.nextInt();
+				}
+
+			}
 		}
 
 	}
@@ -158,25 +159,28 @@ public class FlowerShopController {
 			iCont++;
 			System.out.println(iCont + ". " + flowershop.getName() + "\n");
 		}
-		do {
-			try {
-				System.out.println("Select the Shop to Delete");
-				iOption = sc.nextInt();
+		if (ShopRepository.getShops().isEmpty()) {
+			System.out.println("There are no shops yet in the shops network\nSelect 1. to create a shop");
+		} else {
+			do {
+				try {
+					System.out.println("Select the Shop to Delete");
+					iOption = sc.nextInt();
 
-				if (iOption < 1 || iOption > iCont) {
-					System.out.println("You must choice one Shop to delete it");
+					if (iOption < 1 || iOption > iCont) {
+						System.out.println("You must choice one Shop to delete it");
+					}
+
+				} catch (Exception e) {
+					System.out.println("You must enter one number.\n");// a number?
+					sc.next();// ?
+
 				}
+			} while (iOption < 1 || iOption > iCont);
 
-			} catch (Exception e) {
-				System.out.println("You must enter one number.\n");// a number?
-				sc.next();// ?
-
-			}
-		} while (iOption < 1 || iOption > iCont);
-
-		iOption = iOption - 1;
-		deleteShop(iOption);
-
+			iOption = iOption - 1;
+			deleteShop(iOption);
+		}
 	}
 
 	public void deleteShop(int position) {
