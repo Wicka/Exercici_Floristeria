@@ -183,18 +183,16 @@ public class ArticleController {
 	// -------------------------------------------------------------------------------------------------------------------------
 
 	public void menuDeleteArticle() {
-		int iCont = 0;
+		int iCont = 1;
 		Scanner sc = new Scanner(System.in);
-		int iOption = -1;
 
 		for (AbsArticle article : repositoryArticles.getArticles()) {
-			iCont++;
 			System.out.println(iCont + ". " + article + "\n");
+			iCont++;
 		}
 		System.out.println("Select one article to delete");
-		iOption = sc.nextInt();
-		iOption = iOption - 1;
-		deleteArticle(iOption);
+		int iOption = sc.nextInt();
+		deleteArticle(iOption - 1);
 	}
 
 	public void deleteArticle(int position) {
