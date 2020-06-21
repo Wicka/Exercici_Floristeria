@@ -29,7 +29,7 @@ public class ArticleController {
 
 		Scanner sc = new Scanner(System.in);
 
-		String name=null, description=null;
+		String name="", description="";
 		double pvp;
 		int iColour = -1, iType = -1, iMaterial;
 		Colour colour;
@@ -141,6 +141,11 @@ public class ArticleController {
 			}
 
 		} catch (Exception e) {
+			System.out.println("Error en la entrada datos");
+	
+			iType = sc.nextInt();
+			sc.nextLine();
+
 			e.printStackTrace();
 		}
 
