@@ -25,7 +25,7 @@ public class Flower_Shop {
 
 	@Override
 	public String toString() {
-		return  "\n Name = "+ name + "\n Adress = "+ adress + "\n Phone = " + phone + "\n City =" + city ;
+		return  "\n Name = "+ name + "\n Adress = "+ adress + "\n Phone = " + phone + "\n City =" + city +"\n";
 	}
 	
 	
