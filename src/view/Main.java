@@ -34,10 +34,10 @@ public class Main {
 	                        System.out.println("View Flower Shop");
 	                        viewShops();
 	                        break;
-	                    case 3:
+	                    /*case 3:
 	                        System.out.println("Start Flower Shop");
 	                        Menu.oneShopMenu();
-	                        break;
+	                        break;*/
 	                    case 4:
 	                        System.out.println("Delete Flower Shop");
 	                        Menu.line();
