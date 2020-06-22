@@ -50,7 +50,7 @@ public class FlowerShopController {
 	public void createFlowerShop(String name, String adress, String phone, String city) throws Exception {
 		Flower_Shop flowershop = new Flower_Shop(name, adress, phone, city);
 		repositoryShops.addShop(flowershop);
-		System.out.println("This Shop mas successfully created:\n" + flowershop.toString());
+		System.out.println("This Shop has been successfully created:\n" + flowershop.toString());
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------------
@@ -83,9 +83,9 @@ public class FlowerShopController {
 
 					iOption = sc.nextInt();
 				}
-
+		
 				System.out.println(
-						"SE HA SELECCIONADO LA TIENDA " + repositoryShops.getAllShops().get(iOption - 1).getName());
+						"YOUR SELECTION IS:  " + repositoryShops.getAllShops().get(iOption - 1).getName() +"\n");
 			} while (iOption < 1 || iOption > iCont);
 
 			// FIN ELIJO TIENDA
@@ -126,7 +126,7 @@ public class FlowerShopController {
 						break;
 
 					case 4:
-						System.out.println("I want to Come Back Previous Menu");
+						System.out.println("Go back to Previous Menu");
 						exit = true;
 						break;
 

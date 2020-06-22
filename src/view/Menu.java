@@ -60,7 +60,7 @@ public class Menu {
 	
 	public static void showsShop(ShopRepository repositoryShops) {
 		int iCont=0;
-		System.out.println("SELECCIONA TIENDA");
+		System.out.println("Slect your Shop");
 		
 		for (Flower_Shop shop : repositoryShops.getAllShops()) {
 			iCont=iCont+1;

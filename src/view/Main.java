@@ -45,17 +45,17 @@ public class Main {
 	                    case 2:
 	                    	//MOSTRAR TIENDAS
 	                    	controllerShop.menuViewShops();
-	                    break;
+	                    	break;
 	                    
 	                    case 3:
 	                    	//DELETE SHOP
 	                    	controllerShop.menuDeleteShop();	                    	
-	                    break;	                    
+	                    	break;	                    
 	                    
 	                    case 4:
 	                    	System.out.println("I want to Exit the program. Bye, bye");	            	        
 	                    	exit = true;
-	                    break;
+	                    	break;
 	                   
 	                    default:
 	                        System.out.println("You must enter a number between (1,2,3,4) \n");
