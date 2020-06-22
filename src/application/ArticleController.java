@@ -29,7 +29,7 @@ public class ArticleController {
 
 		Scanner sc = new Scanner(System.in);
 
-		String name="", description="";
+		String name = "", description = "";
 		double pvp;
 		int iColour = -1, iType = -1, iMaterial;
 		Colour colour;
@@ -49,12 +49,12 @@ public class ArticleController {
 
 			System.out.println("Enter name. \n");
 			name = sc.nextLine();
-	
+
 			System.out.println("Enter description.\n");
 			description = sc.nextLine();
 
 			System.out.println("Enter PVP.");
-			pvp = sc.nextInt();
+			pvp = sc.nextDouble();
 
 			// PARAMETROS ESPECIFICO DE TIPO ARTICULO
 
@@ -142,7 +142,7 @@ public class ArticleController {
 
 		} catch (Exception e) {
 			System.out.println("Error en la entrada datos");
-	
+
 			iType = sc.nextInt();
 			sc.nextLine();
 
@@ -176,11 +176,11 @@ public class ArticleController {
 
 	public void menuSeeArticle() {
 		// Menu.showArticles();
-		
-		if (repositoryArticles.getArticles().size()==0) {
+
+		if (repositoryArticles.getArticles().size() == 0) {
 			System.out.println("There isn't any article in this store. \n");
-		}else {
-			
+		} else {
+
 			System.out.println("these are the articles in this store:\n");
 			for (AbsArticle article : repositoryArticles.getArticles()) {
 				System.out.println(article);
@@ -197,10 +197,10 @@ public class ArticleController {
 		int iCont = 1;
 		Scanner sc = new Scanner(System.in);
 
-		if (repositoryArticles.getArticles().size()==0) {
+		if (repositoryArticles.getArticles().size() == 0) {
 			System.out.println("There isn't any article to delete in this store. \n");
-		}else {	
-			
+		} else {
+
 			for (AbsArticle article : repositoryArticles.getArticles()) {
 				System.out.println(iCont + ". " + article + "\n");
 				iCont++;
