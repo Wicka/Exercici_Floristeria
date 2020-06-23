@@ -17,11 +17,7 @@ public class FlowerShopController {
 		this.controllerArticle = new ArticleController();
 	}
 
-	// -------------------------------------------------------------------------------------------------------------------------
-	// -------------------------------------CREACION TIENDA
-	// ---------------------------------------------------------------------
-	// -------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void menuCreateFlowerShop() {
 
 		Scanner sc = new Scanner(System.in);
@@ -53,11 +49,7 @@ public class FlowerShopController {
 		System.out.println("This Shop mas successfully created:\n" + flowershop.toString());
 	}
 
-	// -------------------------------------------------------------------------------------------------------------------------
-	// -------------------------------------VISUALIZAR TIENDA
-	// --------------------------------------------------------------------
-	// -------------------------------------------------------------------------------------------------------------------------
-
+	
 	public void menuViewShops() {
 		Scanner sc = new Scanner(System.in);
 		boolean exit = false;
@@ -130,8 +122,6 @@ public class FlowerShopController {
 
 	}
 
-	// -------------------------------------------------------------------------------------------------------------------------
-	// -------------------------------------ELIMINAR TIENDA
 
 	public void menuDeleteShop() {
 
@@ -174,8 +164,7 @@ public class FlowerShopController {
 		System.out.println(
 				"This Shop was successfully deleted. This are the actual shops in the network:\n" + getAllShops());
 	}
-	// -------------------------------------------------------------------------------------------------------------------------
-	// ------------------------------------- MOSTRAR REPOSITORIOS
+
 	
 	public int findShop() {
 		int position = -1;
@@ -186,9 +175,7 @@ public class FlowerShopController {
 		return position;
 	}
 
-	// -------------------------------------------------------------------------------------------------------------
-	// ------------------------------------- GETTERS
-
+	
 	public ShopRepository getRepositoryShops() {
 		return repositoryShops;
 	}
@@ -197,8 +184,6 @@ public class FlowerShopController {
 		return controllerArticle;
 	}
 
-	// -------------------------------------------------------------------------------------------------------------------------
-	// ------------------------------------- RECUPERAR ARRAYLIST TIENDAS EN STRING
 	
 	public String getAllShops() {
 
