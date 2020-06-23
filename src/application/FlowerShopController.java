@@ -26,8 +26,7 @@ public class FlowerShopController {
 
 		Scanner sc = new Scanner(System.in);
 
-		String name, adress, city, phone;
-		
+		String name, adress, phone, city;
 		System.out.println("Enter Name new Flower Shop. \n");
 		name = sc.nextLine();
 		System.out.println("Enter Adress. \n");
@@ -51,7 +50,7 @@ public class FlowerShopController {
 	public void createFlowerShop(String name, String adress, String phone, String city) throws Exception {
 		Flower_Shop flowershop = new Flower_Shop(name, adress, phone, city);
 		repositoryShops.addShop(flowershop);
-		System.out.println("This Shop has been successfully created:\n" + flowershop.toString());
+		System.out.println("This Shop mas successfully created:\n" + flowershop.toString());
 	}
 
 	// -------------------------------------------------------------------------------------------------------------------------
@@ -65,10 +64,7 @@ public class FlowerShopController {
 		int iOption = -1;
 
 		int iCont = repositoryShops.getAllShops().size();
-
-		// MUESTRO TIENDAS
-		// FIN MOSTRAR TIENDAS
-		// ELIJA TIENDA
+		
 		if (iCont == 0) {
 			System.out.println("There are no shops yet in the shops network\nSelect 1. to create a shop");
 		} else {
@@ -77,30 +73,19 @@ public class FlowerShopController {
 				try {
 
 					iOption = sc.nextInt();
-					// FALTA TRATAR QUE SE ENTRE CORRECTAMENTE
-					// PUES CON ESTE SI ENTRA LETRA SE VA AL TRY CATH INICIAL
-
+			
 				} catch (Exception e) {
 
 					iOption = sc.nextInt();
 				}
-		
+
 				System.out.println(
-						"YOUR SELECTION IS:  " + repositoryShops.getAllShops().get(iOption - 1).getName() +"\n");
+						"You are selecete the Shop : " + repositoryShops.getAllShops().get(iOption - 1).getName());
 			} while (iOption < 1 || iOption > iCont);
 
-			// FIN ELIJO TIENDA
 
 			iOption = -1;
-
-			// ENTRO EN MENU ARTICULOS
-
-			// DEPENDIENDO QUE ELIJA SE ENVIA MENU
-			// NUEVO ARTICULO
-			// VER ARTICULO
-			// BORRAR ARTICUL
-			// VOLVER MENU ANTERIOR
-
+		
 			while (!exit) {
 
 				Menu.oneShopMenu();
@@ -127,7 +112,7 @@ public class FlowerShopController {
 						break;
 
 					case 4:
-						System.out.println("Go back to Previous Menu");
+						System.out.println("I want to Come Back Previous Menu");
 						exit = true;
 						break;
 
@@ -147,8 +132,6 @@ public class FlowerShopController {
 
 	// -------------------------------------------------------------------------------------------------------------------------
 	// -------------------------------------ELIMINAR TIENDA
-	// --------------------------------------------------------------------
-	// -------------------------------------------------------------------------------------------------------------------------
 
 	public void menuDeleteShop() {
 
@@ -189,14 +172,11 @@ public class FlowerShopController {
 		repositoryShops.deleteShop(position);
 
 		System.out.println(
-				"This Shop was successfully deleted. Those are the actual shops in the network:\n" + getAllShops());
+				"This Shop was successfully deleted. This are the actual shops in the network:\n" + getAllShops());
 	}
 	// -------------------------------------------------------------------------------------------------------------------------
 	// ------------------------------------- MOSTRAR REPOSITORIOS
-	// --------------------------------------------------------------
-	// ------------------------------------------------A
-	// COMPLETAR--------------------------------------------------------
-
+	
 	public int findShop() {
 		int position = -1;
 		for (Flower_Shop shop : ShopRepository.getShops()) {
@@ -208,7 +188,6 @@ public class FlowerShopController {
 
 	// -------------------------------------------------------------------------------------------------------------
 	// ------------------------------------- GETTERS
-	// --------------------------------------------------------------
 
 	public ShopRepository getRepositoryShops() {
 		return repositoryShops;
@@ -220,9 +199,7 @@ public class FlowerShopController {
 
 	// -------------------------------------------------------------------------------------------------------------------------
 	// ------------------------------------- RECUPERAR ARRAYLIST TIENDAS EN STRING
-	// --------------------------------------------------------
-	// -------------------------------------------------------------------------------------------------------------------------
-
+	
 	public String getAllShops() {
 
 		String allShops = "";
