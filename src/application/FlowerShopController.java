@@ -26,7 +26,8 @@ public class FlowerShopController {
 
 		Scanner sc = new Scanner(System.in);
 
-		String name, adress, phone, city;
+		String name, adress, city, phone;
+		
 		System.out.println("Enter Name new Flower Shop. \n");
 		name = sc.nextLine();
 		System.out.println("Enter Adress. \n");
@@ -188,7 +189,7 @@ public class FlowerShopController {
 		repositoryShops.deleteShop(position);
 
 		System.out.println(
-				"This Shop was successfully deleted. This are the actual shops in the network:\n" + getAllShops());
+				"This Shop was successfully deleted. Those are the actual shops in the network:\n" + getAllShops());
 	}
 	// -------------------------------------------------------------------------------------------------------------------------
 	// ------------------------------------- MOSTRAR REPOSITORIOS
