@@ -26,8 +26,12 @@ public class ShopRepository {
 	}
 
 	public void addShop(Flower_Shop shop) throws Exception {
+<<<<<<< HEAD:src/persistence/ShopRepository.java
 		if (shop == null)
 			throw new Exception();
+=======
+		if(shop==null) throw new Exception();
+>>>>>>> a3e02df23df8b6bd79c59e9732e7c8edb3b8f23a:Exercici_Floristeria/src/persistence/ShopRepository.java
 		shops.add(shop);
 	}
 

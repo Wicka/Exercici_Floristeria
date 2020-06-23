@@ -17,9 +17,14 @@ public class ArticleRepository {
 		return new ArrayList<>(articles);
 	}
 
+<<<<<<< HEAD:src/persistence/ArticleRepository.java
 	public void addArticle(AbsArticle article) throws Exception {
 		if (article == null)
 			throw new Exception();
+=======
+	public void addArticle(AbsArticle article) throws Exception{
+		if(article==null) throw new Exception();
+>>>>>>> a3e02df23df8b6bd79c59e9732e7c8edb3b8f23a:Exercici_Floristeria/src/persistence/ArticleRepository.java
 		articles.add(article);
 	}
 
