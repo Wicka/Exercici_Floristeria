@@ -27,7 +27,7 @@ public class ArticleController {
 	public void menuCreateArticle() {
 		int choice;
 		do {
-			System.out.println("please choose a number between 1 and 4");
+			System.out.println("please choose a number between 1 and 3"); //Nuria Corregido de 1 a 3 el 4 no tiene sent
 			Menu.categorysForArticles();
 			Scanner sc = new Scanner(System.in);
 			try {
@@ -36,7 +36,7 @@ public class ArticleController {
 				System.out.println("you did not put in an number");
 				choice = 0;
 			}
-		} while (!(choice == 1 || choice == 2 || choice == 3 || choice == 4));
+		} while (!(choice == 1 || choice == 2 || choice == 3 /*|| choice == 4^*/));
 
 		switch (choice) {
 		case 1:
@@ -48,7 +48,7 @@ public class ArticleController {
 		case 3:
 			createOrnato();
 			break;
-		case 4:
+		default:	// Por defecto
 			break;
 		}
 	}
@@ -125,6 +125,7 @@ public class ArticleController {
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
+		
 		int choice = 0;
 		Colour colour;
 		do {
@@ -139,7 +140,7 @@ public class ArticleController {
 
 			choice = sc.nextInt();
 
-			System.out.println("please choose between 1,and 7");
+			System.out.println("please choose between 1 and 7");
 		} while ((choice < 1 || choice > 6));
 
 		switch (choice) {
