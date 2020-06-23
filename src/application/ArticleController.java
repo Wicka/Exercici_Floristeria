@@ -26,27 +26,25 @@ public class ArticleController {
 	// k: menu to create an article
 	public void menuCreateArticle() {
 		int choice;
+		do {
+			System.out.println("please choose a number between 1 and 4");
+			Menu.categorysForArticles();
+			Scanner sc = new Scanner(System.in);
+			choice = Integer.parseInt(sc.nextLine());
+		} while (!(choice == 1 || choice == 2 || choice == 3 || choice == 4));
 
-		System.out.println("ELIGE TIPO ARTICULO");
-		Menu.categorysForArticles();
-		Scanner sc = new Scanner(System.in);
-		choice = Integer.parseInt(sc.nextLine());
-		if (!(choice == 1 || choice == 2 || choice == 3 || choice == 4)) {
-			System.out.println("please choose between 1,2,3 and 4");
-		} else {
-			switch (choice) {
-			case 1:
-				createFlower();
-				break;
-			case 2:
-				createTree();
-				break;
-			case 3:
-				createOrnato();
-				break;
-			case 4:
-				break;
-			}
+		switch (choice) {
+		case 1:
+			createFlower();
+			break;
+		case 2:
+			createTree();
+			break;
+		case 3:
+			createOrnato();
+			break;
+		case 4:
+			break;
 		}
 	}
 
@@ -122,55 +120,54 @@ public class ArticleController {
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter Colour");
-		System.out.println("1. " + Colour.Blue);
-		System.out.println("2. " + Colour.Green);
-		System.out.println("3. " + Colour.Pink);
-		System.out.println("4. " + Colour.Red);
-		System.out.println("5. " + Colour.White);
-		System.out.println("6. " + Colour.Yellow);
-
-		int choice = sc.nextInt();
-
+		int choice = 0;
 		Colour colour;
-		if ((choice < 1 && choice > 7)) {
+		do {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter Colour");
+			System.out.println("1. " + Colour.Blue);
+			System.out.println("2. " + Colour.Green);
+			System.out.println("3. " + Colour.Pink);
+			System.out.println("4. " + Colour.Red);
+			System.out.println("5. " + Colour.White);
+			System.out.println("6. " + Colour.Yellow);
+
+			choice = sc.nextInt();
+
 			System.out.println("please choose between 1,and 7");
-		} else {
-			switch (choice) {
-			case 1:
-				colour = Colour.Blue;
-				break;
-			case 2:
-				colour = Colour.Green;
-				break;
-			case 3:
-				colour = Colour.Pink;
-				break;
-			case 4:
-				colour = Colour.Red;
-				break;
-			case 5:
-				colour = Colour.White;
-				break;
-			case 6:
-				colour = Colour.Yellow;
-				break;
+		} while ((choice < 1 || choice > 6));
 
-			default:
-				colour = Colour.Undefined;
-				break;
-			}
+		switch (choice) {
+		case 1:
+			colour = Colour.Blue;
+			break;
+		case 2:
+			colour = Colour.Green;
+			break;
+		case 3:
+			colour = Colour.Pink;
+			break;
+		case 4:
+			colour = Colour.Red;
+			break;
+		case 5:
+			colour = Colour.White;
+			break;
+		case 6:
+			colour = Colour.Yellow;
+			break;
 
-			try {
-				AbsArticle flower = new Flower(name, description, pvp, colour);
-				repositoryArticles.addArticle(flower);
-				System.out.println("you created a flower:\n" + flower);
-			} catch (Exception e) {
-			}
+		default:
+			colour = Colour.Undefined;
+			break;
 		}
 
+		try {
+			AbsArticle flower = new Flower(name, description, pvp, colour);
+			repositoryArticles.addArticle(flower);
+			System.out.println("you created a flower:\n" + flower);
+		} catch (Exception e) {
+		}
 	}
 
 	// k: create a tree
@@ -202,13 +199,16 @@ public class ArticleController {
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter Material");
-		System.out.println("1. " + Material.Wood);
-		System.out.println("2. " + Material.Plastic);
-
-		int choice = Integer.parseInt(sc.nextLine());
+		int choice;
 		Material material = null;
+		do {
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Enter Material");
+			System.out.println("1. " + Material.Wood);
+			System.out.println("2. " + Material.Plastic);
+			choice = Integer.parseInt(sc.nextLine());
+
+		} while (!(choice == 1 || choice == 2));
 		switch (choice) {
 		case 1:
 			material = Material.Wood;
