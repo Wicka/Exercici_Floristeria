@@ -30,7 +30,12 @@ public class ArticleController {
 			System.out.println("please choose a number between 1 and 4");
 			Menu.categorysForArticles();
 			Scanner sc = new Scanner(System.in);
-			choice = Integer.parseInt(sc.nextLine());
+			try {
+				choice = Integer.parseInt(sc.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.println("you did not put in an number");
+				choice = 0;
+			}
 		} while (!(choice == 1 || choice == 2 || choice == 3 || choice == 4));
 
 		switch (choice) {
