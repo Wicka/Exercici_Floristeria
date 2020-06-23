@@ -11,7 +11,8 @@ public class Menu {
 		System.out.println("1. Flower");
 		System.out.println("2. Tree");
 		System.out.println("3. Decoration");
-		System.out.println("4. Delete Article.");
+		//System.out.println("4. Delete Article.");  Nuria -- Deleted as this is not a category for an Article
+		System.out.println("Select one Option");
 		blankLine();
 		
 	}
@@ -23,6 +24,7 @@ public class Menu {
 		System.out.println("2. See Articles");
 		System.out.println("3. Delete Article");
 		System.out.println("4. Exit");
+		System.out.println("Select one Option");
 		blankLine();
 
 	}
