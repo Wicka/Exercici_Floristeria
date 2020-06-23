@@ -1,6 +1,5 @@
 package application;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
@@ -94,52 +93,24 @@ public class ArticleController {
 				+ repositoryArticles.getArticles());
 	}
 
-	// k: collect name description and price of an article
-	public List<Object> collectNameDescPriceArticle() {
-		List<Object> nameDescPriceList = new ArrayList<Object>();
-		Scanner sc = new Scanner(System.in);
-
-		System.out.println("Enter name.");
-		String name = sc.nextLine();
-		nameDescPriceList.add(name);
-
-		System.out.println("Enter description.\n");
-		String description = sc.nextLine();
-		nameDescPriceList.add(description);
-
-		System.out.println("Enter PVP.");
-		Double pvp = Double.parseDouble(sc.nextLine());
-		nameDescPriceList.add(pvp);
-
-		// sc.close();
-
-		return nameDescPriceList;
-
-	}
-
 	// k: create a flower
 	public void createFlower() {
 
 		// collecting name description and
-		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
+		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
+
 		int choice = 0;
 		Colour colour;
+
 		do {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter Colour");
-			System.out.println("1. " + Colour.Blue);
-			System.out.println("2. " + Colour.Green);
-			System.out.println("3. " + Colour.Pink);
-			System.out.println("4. " + Colour.Red);
-			System.out.println("5. " + Colour.White);
-			System.out.println("6. " + Colour.Yellow);
-
+			Menu.chooseColorMenu();
 			choice = sc.nextInt();
-
 			System.out.println("please choose between 1,and 7");
+
 		} while ((choice < 1 || choice > 6));
 
 		switch (choice) {
@@ -177,7 +148,7 @@ public class ArticleController {
 
 	// k: create a tree
 	public void createTree() {
-		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
+		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
@@ -199,7 +170,7 @@ public class ArticleController {
 
 	// k: create a decoration
 	public void createOrnato() {
-		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
+		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
@@ -208,9 +179,7 @@ public class ArticleController {
 		Material material = null;
 		do {
 			Scanner sc = new Scanner(System.in);
-			System.out.println("Enter Material");
-			System.out.println("1. " + Material.Wood);
-			System.out.println("2. " + Material.Plastic);
+			Menu.chooseMaterialMenu();
 			choice = Integer.parseInt(sc.nextLine());
 
 		} while (!(choice == 1 || choice == 2));
