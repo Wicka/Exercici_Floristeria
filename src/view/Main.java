@@ -17,9 +17,9 @@ public class Main {
 	        int opcion; 
 	        
          	try {
-				controllerShop.createFlowerShop("La FLoristeria 01", "Calle Flor 1", "123456787", "Barcelona");
-				controllerShop.createFlowerShop("La FLoristeria 02", "Calle Flor 2", "123456788", "Madrid");
-				controllerShop.createFlowerShop("La FLoristeria 03", "Calle Flor 3", "123456789", "Valencia");
+				//controllerShop.createFlowerShop("La FLoristeria 01", "Calle Flor 1", "123456787", "Barcelona");
+				//controllerShop.createFlowerShop("La FLoristeria 02", "Calle Flor 2", "123456788", "Madrid");
+				//controllerShop.createFlowerShop("La FLoristeria 03", "Calle Flor 3", "123456789", "Valencia");
 			} catch (Exception e1) {
 				e1.printStackTrace();
 			}
