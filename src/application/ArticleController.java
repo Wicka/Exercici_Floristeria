@@ -1,9 +1,7 @@
 package application;
 
-<<<<<<< HEAD
-=======
+
 import java.util.ArrayList;
->>>>>>> Wicka
 import java.util.List;
 import java.util.Scanner;
 
@@ -97,8 +95,7 @@ public class ArticleController {
 				+ repositoryArticles.getArticles());
 	}
 
-<<<<<<< HEAD
-=======
+
 	// k: collect name description and price of an article
 	public List<Object> collectNameDescPriceArticle() {
 		List<Object> nameDescPriceList = new ArrayList<Object>();
@@ -122,12 +119,12 @@ public class ArticleController {
 
 	}
 
->>>>>>> Wicka
+
 	// k: create a flower
 	public void createFlower() {
 
 		// collecting name description and
-<<<<<<< HEAD
+
 		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
@@ -140,9 +137,9 @@ public class ArticleController {
 			Scanner sc = new Scanner(System.in);
 			Menu.chooseColorMenu();
 			choice = sc.nextInt();
-			System.out.println("please choose between 1,and 7");
+			System.out.println("please choose between 1 and 7");
 
-=======
+/*
 		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
@@ -162,7 +159,7 @@ public class ArticleController {
 			choice = sc.nextInt();
 
 			System.out.println("please choose between 1,and 7");
->>>>>>> Wicka
+*/
 		} while ((choice < 1 || choice > 6));
 
 		switch (choice) {
@@ -200,11 +197,11 @@ public class ArticleController {
 
 	// k: create a tree
 	public void createTree() {
-<<<<<<< HEAD
+
 		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
-=======
+/*
 		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
->>>>>>> Wicka
+*/
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
@@ -226,11 +223,11 @@ public class ArticleController {
 
 	// k: create a decoration
 	public void createOrnato() {
-<<<<<<< HEAD
+
 		List<Object> articleNameDescPrice = Menu.collectNameDescPriceArticle();
-=======
+/*
 		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
->>>>>>> Wicka
+*/
 		String name = (String) articleNameDescPrice.get(0);
 		String description = (String) articleNameDescPrice.get(1);
 		Double pvp = (Double) articleNameDescPrice.get(2);
@@ -239,13 +236,13 @@ public class ArticleController {
 		Material material = null;
 		do {
 			Scanner sc = new Scanner(System.in);
-<<<<<<< HEAD
+
 			Menu.chooseMaterialMenu();
-=======
+
 			System.out.println("Enter Material");
 			System.out.println("1. " + Material.Wood);
 			System.out.println("2. " + Material.Plastic);
->>>>>>> Wicka
+
 			choice = Integer.parseInt(sc.nextLine());
 
 		} while (!(choice == 1 || choice == 2));
