@@ -137,7 +137,7 @@ public class ArticleController {
 			Scanner sc = new Scanner(System.in);
 			Menu.chooseColorMenu();
 			choice = sc.nextInt();
-			System.out.println("please choose between 1 and 7");
+			System.out.println("please choose between 1 and 6"); //N - there is only 6 options no 7
 
 /*
 		List<Object> articleNameDescPrice = collectNameDescPriceArticle();
